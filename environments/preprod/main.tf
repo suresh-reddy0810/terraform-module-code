@@ -22,7 +22,8 @@ module "vm" {
     vm_name = var.vm_name
     nic_name = var.nic_name
     sub1_id = module.vnet.sub1_id
-    rg_name 
+    rg_name = module.rg.rg_name
+    location = module.rg.location
 
 }
 
@@ -42,3 +43,4 @@ module "aks" {
     aks_name = var.aks_name
 
 }
+

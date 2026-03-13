@@ -21,6 +21,7 @@ module "vm" {
     source = "../../modules/vm/"
     vm_name = var.vm_name
     nic_name = var.nic_name
+    sub1_id = module.vnet.sub1_id
 
 
 }
@@ -41,3 +42,4 @@ module "aks" {
     aks_name = var.aks_name
 
 }
+

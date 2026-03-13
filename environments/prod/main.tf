@@ -22,24 +22,33 @@ module "vm" {
     vm_name = var.vm_name
     nic_name = var.nic_name
     sub1_id = module.vnet.sub1_id
-
+    rg_name = module.rg.rg_name
+    location = module.rg.location
 
 }
 
 module "storage" {
     source = "../../modules/storage/"
     storage_account_name = var.storage_account_name
+    rg_name = module.rg.rg_name
+    location = module.rg.location
 }
 
 module "webapp" {
     source = "../../modules/webapp/"
     app_service_name = var.app_service_name
     service_plan_name = var.service_plan_name
+    rg_name = module.rg.rg_name
+    location = module.rg.location
 }
 
 module "aks" {
     source = "../../modules/aks/"
     aks_name = var.aks_name
+    sub1_id = module.vnet.sub1_id
+    rg_name = module.rg.rg_name
+    location = module.rg.location
 
 }
+
 

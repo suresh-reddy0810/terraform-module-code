@@ -30,6 +30,9 @@ module "vm" {
 module "storage" {
     source = "../../modules/storage/"
     storage_account_name = var.storage_account_name
+    sub2_private_id = module.vnet.sub2_private_id
+    rg_name = module.rg.rg_name
+    location = module.rg.location
 }
 
 module "webapp" {
@@ -43,4 +46,5 @@ module "aks" {
     aks_name = var.aks_name
 
 }
+
 

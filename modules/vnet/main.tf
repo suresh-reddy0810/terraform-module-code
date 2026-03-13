@@ -14,13 +14,14 @@ resource "azurerm_virtual_network" "vnet" {
  resource "azurerm_subnet" "sub1" {
   name                 = var.sub1_name
   resource_group_name  = var.rg_name
-  virtual_network_name = azurerm_virtual_network.vnet.name
+  virtual_network_name = var.vnet_name
   address_prefixes     = var.sub1_cicdr
  }
  resource "azurerm_subnet" "sub2_private" {
   name                 = var.sub2_name
   resource_group_name  = var.rg_name
-  virtual_network_name = azurerm_virtual_network.vnet.name
+  virtual_network_name = var.vnet_name
   address_prefixes     = var.sub2_cicdr
  }
+
   

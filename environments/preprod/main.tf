@@ -39,12 +39,18 @@ module "webapp" {
     source = "../../modules/webapp/"
     app_service_name = var.app_service_name
     service_plan_name = var.service_plan_name
+    rg_name = module.rg.rg_name
+    location = module.rg.location
 }
 
 module "aks" {
     source = "../../modules/aks/"
     aks_name = var.aks_name
+    rg_name = module.rg.rg_name
+    location = module.rg.location
+    sub1_name = module.vnet.sub1_name
 
 }
+
 
 

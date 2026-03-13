@@ -8,7 +8,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
     name            = "system"
     node_count      = 2
     vm_size         = "Standard_DS2_v2"
-    vnet_subnet_id  = var.sub1_name
+    vnet_subnet_id  = var.sub1_id
   }
 
   identity {
@@ -19,4 +19,5 @@ resource "azurerm_kubernetes_cluster" "aks" {
     network_plugin = "azure"
     load_balancer_sku = "standard"
   }
+
 }

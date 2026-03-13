@@ -32,7 +32,7 @@ module "storage" {
     storage_account_name = var.storage_account_name
     rg_name = module.rg.rg_name
     location = module.rg.location
-    sub2_private_id = module.vnet.
+    sub2_private_id = module.vnet.sub2_private_id
 }
 
 module "webapp" {
@@ -51,6 +51,7 @@ module "aks" {
     location = module.rg.location
 
 }
+
 
 
 

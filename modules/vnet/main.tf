@@ -14,13 +14,13 @@ resource "azurerm_virtual_network" "vnet" {
  resource "azurerm_subnet" "sub1" {
   name                 = var.sub1_name
   resource_group_name  = var.rg_name
-  virtual_network_name = var.azurerm_virtual_network.name.id
+  virtual_network_name = var.azurerm_virtual_network.vnet.id
   address_prefixes     = var.sub1_cicdr
  }
  resource "azurerm_subnet" "sub2" {
   name                 = var.sub2_name
   resource_group_name  = var.rg_name
-  virtual_network_name = var.azurerm_virtual_network.name.id
+  virtual_network_name = var.azurerm_virtual_network.vnet.id
   address_prefixes     = var.sub2_cicdr
  }
 

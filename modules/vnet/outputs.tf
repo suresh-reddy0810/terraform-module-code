@@ -12,17 +12,17 @@ output "sub1_cicdr" {
 }
 
 output "sub2_name" {
-    value = azurerm_subnet.sub2_private.name
+    value = azurerm_subnet.sub2.name
 }
 
 output "sub2_cicdr" {
-    value = azurerm_subnet.sub2_private.address_prefixes
+    value = azurerm_subnet.sub2.address_prefixes
 }
 output "sub1_id" {
 value = azurerm_subnet.sub1.id
 }
-output "sub2_private_id" {
-  value = azurerm_subnet.sub2_private.id
+output "sub2_id" {
+  value = azurerm_subnet.sub2.id
 }
 output "vnet_id" {
     value = azurerm_virtual_network.vnet.id
